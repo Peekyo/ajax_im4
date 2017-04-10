@@ -38,6 +38,8 @@
 
   if(isset($_POST['register-submit'])){
     if(!empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['confirm-password'])){
+        $vorname = filter_data($_POST['firstname']);
+        $nachname = filter_data($_POST['lastname']);
         $email = filter_data($_POST['email']);
         $password = filter_data($_POST['password']);
         $password_confirm = filter_data($_POST['confirm-password']);
@@ -139,9 +141,15 @@
                     </div>
                   </div>
                 </form>
-                <!-- /Login-Formular -->
+                <!-- /Registrier-Formular -->
 
                 <form action="index.php" method="post" id="register-form" role="form">
+                  <div class="form-group">
+                    <input type="text" name="Vorname" tabindex="1" class="form-control" placeholder="Vorname">
+                  </div>
+                  <div class="form-group">
+                    <input type="text" name="Nachname" tabindex="1" class="form-control" placeholder="Nachname">
+                  </div>
                   <div class="form-group">
                     <input type="email" name="email" tabindex="1" class="form-control" placeholder="E-Mail-Adresse">
                   </div>
